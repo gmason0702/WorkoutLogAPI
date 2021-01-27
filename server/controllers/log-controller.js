@@ -1,7 +1,7 @@
 const router = require("express").Router(); //express methods = GET, POST, PUT, DELETE
 const Workout = require("../db").import("../models/workoutlog");
 
-router.post("/create", (req, res) => {
+router.post("/", (req, res) => {
   const logEntry = {
     description: req.body.description,
     definition: req.body.definition,
