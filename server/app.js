@@ -9,6 +9,12 @@ let user = require("./controllers/user-controller");
 sequelize.sync();
 
 app.use(require("./middleware/headers"));
+
+app.options("*", (req, res) => {
+  res.json({
+    status: "OK",
+  });
+});
 app.use(express.json());
 
 app.use("/user", user);
